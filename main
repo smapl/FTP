@@ -19,7 +19,7 @@ class copyFTP(ReadConfig): 	# копирование файлов на FTP се�
 
 
 	def __init__(self, host, userName, password):
-		super().__init__(name, keyDict)
+		ReadConfig.__init__(self.name, self.keyDict)
 		self.host = host
 		self.userName = userName
 		self.password = password		
@@ -29,10 +29,11 @@ class copyFTP(ReadConfig): 	# копирование файлов на FTP се�
 
 		ftp = ftplib.FTP(self.host, self.userName, self.password)
 		ftp.login()
+		filePath = ReadConfig(self.name, self.keyDict)
 		listSourcePath = filePath.readConfigFile() 	# список в которм находятся все пути файлов 
 
 		for i in listSourcePath:
-			openFile = open(i, rb)
+			openFile = open(i, 'rb')
 			sendFile = ftp.storbinary("STOR" + i, openFile) # загрузка файла на сервер
 
 		ftp.close()
