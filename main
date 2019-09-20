@@ -1,0 +1,56 @@
+import ftplib
+import json
+from threading import Thread 
+
+class ReadConfig:
+	def __init__(self, name, keyDict):
+		self.name = name
+		self.keyDict = keyDict
+
+	def readConfigFile(self):
+
+		with open(self.name) as f: # чтение файла json
+			jsonData = json.load(f)
+		listPath = jsonData.get(self.keyDict) # присваивание переменное значения из файл
+		return listPath
+
+
+class copyFTP(ReadConfig): 	# копирование файлов на FTP сервер
+
+
+	def __init(self, host, userName, password, name, keyDict):
+		super().__init__(name, keyDict)
+		self.userName = userName
+		self.password = password		
+
+
+	def uploadToFtp(self):
+
+		ftp = ftplib.FTP(self.host, self.userName, self.password)
+		ftp.login()
+		filePath = ReadConfig(self.name, self.keyDict) # создаем список исходных путей
+		listSourcePath = filePath.readConfigFile() 	# список в которм находятся все пути файлов 
+
+		for i in listSourcePath:
+			openFile = open(i, rb)
+			sendFile = ftp.storbinary("STOR" + i, openFile) # загрузка файла на сервер
+
+		ftp.close()
+
+
+
+if __name__ == '__main__':
+
+	#UserHost = str(input("Введите хост: "))
+	#UserName = str(input("Введите логин: "))
+	#UserPassword = str(input("Введите пароль: "))
+
+	UserHost = 	"www.zzz.com.ua"
+	UserName = "artyom@sm4pl.zzz.com.ua"
+	UserPassword = "Qwerty123456"
+
+	Name = "data.json"
+	KeyDict = "source path"
+
+	client = copyFTP(host=UserHost, userName=UserName, password=UserPassword, name=Name, keyDict=KeyDict)
+	sendFile = client.uploadToFtp()
