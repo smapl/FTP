@@ -19,7 +19,7 @@ class copyFTP(ReadConfig): 	# копирование файлов на FTP се�
 
 
 	def __init__(self, host, userName, password):
-		super().__init__(self.name, self.keyDict)
+		super().__init__(name, keyDict)
 		self.host = host
 		self.userName = userName
 		self.password = password		
@@ -50,8 +50,9 @@ if __name__ == '__main__':
 	UserPassword = "Qwerty123456"
 
 	Name = "data.json"
-	KeyDict = "source path"
+	KEYDict = "source path"
 
-
+	path = ReadConfig(Name, KEYDict)
+	path.readConfigFile()
 	client = copyFTP(UserHost, UserName, UserPassword)
-	sendFile = client.uploadToFtp()
+	client.uploadToFtp()
