@@ -18,8 +18,9 @@ class ReadConfig:
 class copyFTP(ReadConfig): 	# копирование файлов на FTP сервер
 
 
-	def __init(self, host, userName, password, name, keyDict):
-		super().__init__(name, keyDict)
+	def __init__(self, host, userName, password):
+		super().__init__(self.name, self.keyDict)
+		self.host = host
 		self.userName = userName
 		self.password = password		
 
@@ -28,7 +29,6 @@ class copyFTP(ReadConfig): 	# копирование файлов на FTP се�
 
 		ftp = ftplib.FTP(self.host, self.userName, self.password)
 		ftp.login()
-		filePath = ReadConfig(self.name, self.keyDict) # создаем список исходных путей
 		listSourcePath = filePath.readConfigFile() 	# список в которм находятся все пути файлов 
 
 		for i in listSourcePath:
@@ -52,5 +52,6 @@ if __name__ == '__main__':
 	Name = "data.json"
 	KeyDict = "source path"
 
-	client = copyFTP(host=UserHost, userName=UserName, password=UserPassword, name=Name, keyDict=KeyDict)
+
+	client = copyFTP(UserHost, UserName, UserPassword)
 	sendFile = client.uploadToFtp()
