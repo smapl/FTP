@@ -1,29 +1,30 @@
 import ftplib
 from json import load
 import os
-from threading import Thread
+from threading import Thread, RLock
 
 
 class UploadFile:
-    def __init__(self, info_about_server, source_path, file_name, server_path, ftp):
+    def __init__(self, info_about_server,  server_path, ftp, ):
         self.info_about_server = info_about_server
-        self.source_path = source_path
-        self.file_name = file_name
         self.server_path = server_path
         self.ftp = ftp
+
 
     def authorization(self):
         self.ftp = ftplib.FTP(self.info_about_server['host'],
                               self.info_about_server['user'],
                               self.info_about_server['password'])  # авторизация пользователя на ftp
 
-    def upload(self):
-        for i in range(len(self.source_path)):          # заходит в секцию и считывает все пути оттуда
-            os.chdir(self.source_path[i])               # переходит в дирректорию как в родную
-            myFile = open(self.file_name[sourcePath[i]], "rb")
+    def upload(self, source_path, file_name,  start=0, point=0):
+        lock = RLock()
+        for i in range(start, point):          # заходит в секцию и считывает все пути оттуда
+            os.chdir(source_path[i])               # переходит в дирректорию как в родную
+            myFile = open(file_name[sourcePath[i]], "rb")
             print(sourcePath[i])
-            send = self.ftp.storbinary("STOR " + self.file_name[self.source_path[i]], myFile) # загрузка файлов на сервер
-
+            #lock.acquire()
+            send = self.ftp.storbinary("STOR " + file_name[source_path[i]], myFile, 1024)   # загрузка файлов на сервер
+            #lock.release()
     def close_ftp(self):
         self.ftp.close()  # закрытия ftp соединения
 
@@ -36,11 +37,23 @@ if __name__ == '__main__':
     fileName = data.get("filename")
     serverPath = data.get("server path")
     np = None
-    obj_upload = UploadFile(infoAboutServer, sourcePath, fileName, serverPath, np)
+    obj_upload = UploadFile(infoAboutServer, sourcePath, np)
     obj_upload.authorization()
-    obj_upload.upload()
-    obj_upload.close_ftp()
 
+    thread1 = Thread(target=obj_upload.upload, args=[sourcePath, fileName, 0, len(sourcePath) // 2])
+    thread2 = Thread(target=obj_upload.upload, args=(sourcePath, fileName, len(sourcePath) // 2, len(sourcePath)))
+
+
+# len(sourcePath) // 2, len(sourcePath)
+
+    thread1.start()      # старт потока 1
+    thread2.start()      # старт потока 2
+    #thread1.run()
+    #thread2.run()
+    #thread1.join()       # остановка потока 1
+    #thread2.join()       # остановка потока 2
+
+    obj_upload.close_ftp()
 
 
 
