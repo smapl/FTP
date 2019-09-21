@@ -1,59 +1,57 @@
 import ftplib
-import json
-from threading import Thread 
-
-class ReadConfig:
-	def __init__(self, name, keyDict):
-		self.name = name
-		self.keyDict = keyDict
-
-	def readConfigFile(self):
-
-		with open(self.name) as f: # чтение файла json
-			jsonData = json.load(f)
-		listPath = jsonData.get(self.keyDict) # присваивание переменное значения из файл
-		return listPath
+from json import load
+import os
+from threading import Thread
 
 
-class copyFTP(ReadConfig): 	# копирование файлов на FTP сервер
+class UploadFile:
+    def __init__(self, info_about_server, source_path, file_name, server_path, ftp):
+        self.info_about_server = info_about_server
+        self.source_path = source_path
+        self.file_name = file_name
+        self.server_path = server_path
+        self.ftp = ftp
 
+    def authorization(self):
+        self.ftp = ftplib.FTP(self.info_about_server['host'],
+                              self.info_about_server['user'],
+                              self.info_about_server['password'])  # авторизация пользователя на ftp
 
-	def __init__(self, host, userName, password):
-		ReadConfig.__init__(self.name, self.keyDict)
-		self.host = host
-		self.userName = userName
-		self.password = password		
+    def upload(self):
+        for i in range(len(self.source_path)):          # заходит в секцию и считывает все пути оттуда
+            os.chdir(self.source_path[i])               # переходит в дирректорию как в родную
+            myFile = open(self.file_name[sourcePath[i]], "rb")
+            print(sourcePath[i])
+            send = self.ftp.storbinary("STOR " + self.file_name[self.source_path[i]], myFile) # загрузка файлов на сервер
 
-
-	def uploadToFtp(self):
-
-		ftp = ftplib.FTP(self.host, self.userName, self.password)
-		ftp.login()
-		filePath = ReadConfig(self.name, self.keyDict)
-		listSourcePath = filePath.readConfigFile() 	# список в которм находятся все пути файлов 
-
-		for i in listSourcePath:
-			openFile = open(i, 'rb')
-			sendFile = ftp.storbinary("STOR" + i, openFile) # загрузка файла на сервер
-
-		ftp.close()
-
+    def close_ftp(self):
+        self.ftp.close()  # закрытия ftp соединения
 
 
 if __name__ == '__main__':
+    with open("data2.json") as f:  # считывание файлов с файла конифгуации
+        data = load(f)
+    infoAboutServer = data.get("information about server")
+    sourcePath = data.get("source path")
+    fileName = data.get("filename")
+    serverPath = data.get("server path")
+    np = None
+    obj_upload = UploadFile(infoAboutServer, sourcePath, fileName, serverPath, np)
+    obj_upload.authorization()
+    obj_upload.upload()
+    obj_upload.close_ftp()
 
-	#UserHost = str(input("Введите хост: "))
-	#UserName = str(input("Введите логин: "))
-	#UserPassword = str(input("Введите пароль: "))
 
-	UserHost = 	"www.zzz.com.ua"
-	UserName = "artyom@sm4pl.zzz.com.ua"
-	UserPassword = "Qwerty123456"
 
-	Name = "data.json"
-	KEYDict = "source path"
 
-	path = ReadConfig(Name, KEYDict)
-	path.readConfigFile()
-	client = copyFTP(UserHost, UserName, UserPassword)
-	client.uploadToFtp()
+
+
+
+
+
+
+
+
+
+
+
