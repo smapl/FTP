@@ -1,28 +1,28 @@
 {
  	
 	"information about server": {
-		"host" : "  ",
-		"user" : "  ",
-		"password" : "  "
+		"host" : "www.zzz.com.ua",
+		"user" : "artyom@sm4pl.zzz.com.ua",
+		"password" : "Qwerty123456"
 	},
 
 	"filename" : {
 		 "dr1_1.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "dr1_2.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "file_2.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d2",
-		 "dr3_1.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_2.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_3.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3"
+		 "dr1_2.pdf" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
+		 "file_2.css" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d2",
+		 "dr3_1.php" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
+		 "dr3_2.py" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
+		 "dr3_3.cpp" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3"
 
 	},
 	"server path" : {
 
 		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_1.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_2.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d2\\file_2.txt" : "//dir_2//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_1.txt" : "//dir_3//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_2.txt" : "//dir_3//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_3.txt" : "//dir_3//"
+		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_2.pdf" : "//dir_1//",
+		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d2\\file_2.css" : "//dir_2//",
+		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_1.php" : "//dir_3//",
+		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_2.py" : "//dir_3//",
+		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_3.cpp" : "//dir_3//"
 
 	}
 
