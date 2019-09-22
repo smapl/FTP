@@ -9,7 +9,7 @@ class UploadFile:
         self.info_about_server = info_about_server
 
 
-    def upload(self, source_path, file_name, server_path,  start=0, point=0):
+    def upload(self, file_name, server_path,  start=0, point=0):
         keys = list()
         s_path = list()
         ftp = ftplib.FTP(self.info_about_server['host'],
@@ -56,8 +56,8 @@ if __name__ == '__main__':
     serverPath = data.get("server path")
     obj_upload = UploadFile(infoAboutServer)
 
-    thread1 = Thread(target=obj_upload.upload, args=(sourcePath, fileName, serverPath, 0, len(fileName) // 2))
-    thread2 = Thread(target=obj_upload.upload, args=(sourcePath, fileName, serverPath, len(fileName) // 2, len(fileName)))
+    thread1 = Thread(target=obj_upload.upload, args=(fileName, serverPath, 0, len(fileName) // 2))
+    thread2 = Thread(target=obj_upload.upload, args=(fileName, serverPath, len(fileName) // 2, len(fileName)))
 
     thread2.start()      # старт потока 1
     thread1.start()      # старт потока 2
