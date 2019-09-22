@@ -34,11 +34,10 @@ class UploadFile:
 
                     try:     # проверка файла на существование
                         f = open(keys[i], "rb")
+                        send = ftp.storbinary("STOR " + keys[i], f)
+                        ftp.cwd("//")  # переход в изначальную директорию
                     except FileNotFoundError:
                         print("файла {0} не существует".format(keys[i]))
-
-                    send = ftp.storbinary("STOR " + keys[i], f)
-                    ftp.cwd("//") # переход в изначальную директорию
 
                 elif (file_name[keys[i]] + "\\" + keys[i]) not in s_path:
                      os.chdir(file_name[keys[i]])
