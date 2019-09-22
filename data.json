@@ -9,59 +9,21 @@
 	"filename" : {
 		 "dr1_1.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
 		 "dr1_2.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "dr1_3.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "dr1_4.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "dr1_5.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "dr1_6.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "dr1_7.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "dr1_8.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "dr1_9.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "dr1_10.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
-		 "dr1_11.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1",
 		 "file_2.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d2",
 		 "dr3_1.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
 		 "dr3_2.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_3.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_4.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_5.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_6.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_7.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_8.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_9.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_10.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "dr3_11.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3",
-		 "file_4.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d4",
-		 "file_5.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d5",
-		 "file_6.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d6",
-		 "file_7.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d7"
+		 "dr3_3.txt" : "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3"
+
 	},
 	"server path" : {
 
+		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_1.txt" : "//dir_1//",
 		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_2.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_3.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_4.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_5.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_6.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_7.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_8.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_9.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_10.txt" : "//dir_1//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d1\\dr1_11.txt" : "//dir_1//",
 		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d2\\file_2.txt" : "//dir_2//",
 		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_1.txt" : "//dir_3//",
 		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_2.txt" : "//dir_3//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\file_5.txt" : "//dir_5//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_5.txt" : "//dir_3//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_6.txt" : "//dir_3//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_7.txt" : "//dir_3//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_8.txt" : "//dir_3//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_9.txt" : "//dir_3//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_10.txt" : "//dir_3//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_11.txt" : "//dir_3//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d4\\file_4.txt" : "//dir_4//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d5\\file_5.txt" : "//dir_5//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d6\\file_6.txt" : "//dir_6//",
-		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d7\\file_7.txt" : "//dir_7//"
+		 "D:\\Learning\\Programming\\AVsoft\\Work\\files\\d3\\dr3_3.txt" : "//dir_3//"
+
 	}
 
 
