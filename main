@@ -26,22 +26,20 @@ class UploadFile:
                 if (file_name[keys[i]] + "\\" + keys[i]) == s_path[j]:   # если данный файл нужно перенести в директорию на сервере
 
                     try:
-                        print("переходи в директорию")
                         ftp.cwd(server_path[s_path[j]])
                     except ftplib.error_perm:     # иначе создать директорию и перейти
-                        print("создание директории")
                         ftp.mkd(server_path[s_path[j]])
-                    print("переходи в директорию")
                     ftp.cwd(server_path[s_path[j]])
-
                     os.chdir(file_name[keys[i]])    # переход в директорию на компьютере
-                    print(file_name[keys[i]] + "\\" + keys[i])
-                    f = open(keys[i], "rb")
+                    try:     # проверка файла на существование
+                        f = open(keys[i], "rb")
+                    except FileNotFoundError:
+                        print("файла {0} не существует".format(keys[i]))
                     send = ftp.storbinary("STOR " + keys[i], f)
                     ftp.cwd("//")
                 elif (file_name[keys[i]] + "\\" + keys[i]) not in s_path:
                      os.chdir(file_name[keys[i]])
-                     print(file_name[keys[i]] + "\\" + keys[i])
+                     #print(file_name[keys[i]] + "\\" + keys[i])
                      f = open(keys[i], "rb")
                      send = ftp.storbinary("STOR " + keys[i], f)
                      ftp.cwd("//")
@@ -66,6 +64,8 @@ if __name__ == '__main__':
 
     thread1.join()
     thread2.join()
+
+
 
 
 
