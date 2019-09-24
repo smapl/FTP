@@ -1,0 +1,34 @@
+{
+ 	
+	"information about server": {
+		"host" : "www.zzz.com.ua",
+		"user" : "artyom@sm4pl.zzz.com.ua",
+		"password" : "Qwerty123456"
+	},
+
+	"filename" : {
+		 "file_1.txt" : "/home/artym/Learnning/Soft/Projects/files/",
+		 "file_2.txt" : "/home/artym/Learnning/Soft/Projects/files/",
+		 "file_3.txt" : "/home/artym/Learnning/Soft/Projects/files/",
+		 "file_4.txt" : "/home/artym/Learnning/Soft/Projects/files/",
+		 "file_5.txt" : "/home/artym/Learnning/Soft/Projects/files/",
+		 "file_6.txt" : "/home/artym/Learnning/Soft/Projects/files/",
+		 "file_7.txt" : "/home/artym/Learnning/Soft/Projects/files/",
+		 "file_8.txt" : "/home/artym/Learnning/Soft/Projects/files/"
+
+	},
+
+	"server path" : {
+
+		 "/home/artym/Learnning/Soft/Projects/files/file_1.txt" : "//dir_1//",
+		 "/home/artym/Learnning/Soft/Projects/files/file_2.txt" : "//dir_2//",
+		 "/home/artym/Learnning/Soft/Projects/files/file_3.txt" : "//dir_3//",
+		 "/home/artym/Learnning/Soft/Projects/files/file_4.txt" : "//dir_4//",
+		 "/home/artym/Learnning/Soft/Projects/files/file_5.txt" : "//dir_2//",
+		 "/home/artym/Learnning/Soft/Projects/files/file_6.txt" : "//dir_6//",
+		 "/home/artym/Learnning/Soft/Projects/files/file_7.txt" : "//dir_7//",
+		 "/home/artym/Learnning/Soft/Projects/files/file_8.txt"	: "//dir_8//"
+	} 
+
+
+}
